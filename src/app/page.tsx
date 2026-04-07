@@ -232,7 +232,7 @@ export default function Home() {
 
             {/* POSTS / REELS */}
             <div>
-              <h2 className="text-4xl font-bold mb-4">Latest Posts / Reels</h2>
+              <h2 className="text-3xl font-bold mb-4">Latest Posts / Reels</h2>
 
               {error && (
                 <div className="mb-6 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-300">
