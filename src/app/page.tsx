@@ -77,12 +77,12 @@ export default function Home() {
       )}
 
       <div className="flex w-full">
-        <div className="flex w-full">
+        <div className="flex w-full gap-10">
           <div className="flex w-1/3 place-content-center">
             <div className="bg-white p-6">
               <div className="flex flex-col items-center text-center gap-4 mb-6">
                 <div className="flex flex-col items-center gap-8">
-                  <h1 className="text-4xl font-bold">Dashboard Social Media</h1>
+                  <h1 className="text-2xl font-bold">Dashboard Social Media</h1>
 
                   <img
                     src={
@@ -107,41 +107,41 @@ export default function Home() {
 
               <div className="flex gap-4 text-center place-content-center items-center mb-8">
                 <div className="p-4">
-                  <p className="text-3xl font-bold">
+                  <p className="text-2xl font-bold">
                     {data?.followerCount?.toLocaleString() ?? "-"}
                   </p>
-                  <p className="text-md text-zinc-900 mt-2">Followers</p>
+                  <p className="text-sm text-zinc-900 mt-2">Followers</p>
                 </div>
 
                 <div className="border-l-2 h-8 align-top"></div>
 
                 <div className="p-4">
-                  <p className="text-3xl font-bold">
+                  <p className="text-2xl font-bold">
                     {data?.followingCount?.toLocaleString() ?? "-"}
                   </p>
-                  <p className="text-md text-zinc-900 mt-2">Following</p>
+                  <p className="text-sm text-zinc-900 mt-2">Following</p>
                 </div>
 
                 <div className="border-l-2 h-8"></div>
 
                 <div className="p-4">
-                  <p className="text-3xl font-bold">
+                  <p className="text-2xl font-bold">
                     {data?.mediaCount?.toLocaleString() ?? "-"}
                   </p>
-                  <p className="text-md text-zinc-900 mt-2">Media Count</p>
+                  <p className="text-sm text-zinc-900 mt-2">Media Count</p>
                 </div>
               </div>
 
               <div className="flex flex-col gap-6">
                 <div className="rounded-xl border border-blue-200 shadow-lg bg-blue-100 p-4">
-                  <p className="text-md text-zinc-900">Total Views</p>
+                  <p className="text-sm  text-zinc-900">Total Views</p>
                   <p className="text-2xl font-bold">
                     {data?.totalViews?.toLocaleString() ?? "-"}
                   </p>
                 </div>
 
                 <div className="rounded-xl border border-pink-200 shadow-lg bg-pink-100 p-4">
-                  <p className="text-md text-zinc-900">Total Likes</p>
+                  <p className="text-sm  text-zinc-900">Total Likes</p>
                   <p className="text-2xl font-bold">
                     {data?.totalLikes?.toLocaleString() ?? "-"}
                   </p>
@@ -160,11 +160,11 @@ export default function Home() {
                   placeholder="Enter username/channel"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full rounded-full border border-zinc-100 bg-white pl-12 pr-4 py-3 text-lg font-medium outline-none focus:border-pink-500"
+                  className="w-full rounded-full border border-zinc-100 bg-white pl-12 pr-4 py-3 text-sm font-medium outline-none focus:border-pink-500"
                 />
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 text-xs">
                 <button
                   onClick={() => fetchData("instagram")}
                   disabled={loading}
@@ -176,7 +176,7 @@ export default function Home() {
                 >
                   <FaInstagram
                     className={
-                      "w-6 h-6 mr-2 " +
+                      "w-5 h-5 mr-2 " +
                       (platform === "instagram"
                         ? "text-pink-500"
                         : "text-white")
@@ -199,7 +199,7 @@ export default function Home() {
                 >
                   <FaTiktok
                     className={
-                      "w-6 h-6 mr-2 " +
+                      "w-5 h-5 mr-2 " +
                       (platform === "tiktok" ? "text-cyan-900" : "text-white")
                     }
                   />
@@ -218,7 +218,7 @@ export default function Home() {
                 >
                   <FaYoutube
                     className={
-                      "w-6 h-6 mr-2 " +
+                      "w-5 h-5 mr-2 " +
                       (platform === "youtube" ? "text-red-600" : "text-white")
                     }
                   />
@@ -261,7 +261,7 @@ export default function Home() {
                           )}
                         </div>
 
-                        <div className="flex gap-6 font-semibold text-[22px] text-shadow-sm place-items-center text-center">
+                        <div className="flex gap-4 font-semibold text-[16px] text-shadow-sm place-items-center text-center">
                           <div className="flex place-items-center gap-2">
                             <p className="text-red-500">
                               <FaHeart />
@@ -301,7 +301,7 @@ export default function Home() {
                   ))}
                 </div>
               ) : data?.isPrivate ? (
-                <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-4 text-yellow-300 text-sm">
+                <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/10 p-4 text-yellow-800 text-sm">
                   This profile is private. Posts cannot be displayed.
                 </div>
               ) : (
