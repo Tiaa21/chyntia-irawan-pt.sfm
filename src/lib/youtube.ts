@@ -7,7 +7,6 @@ const headers = {
   "x-rapidapi-host": "youtube-data8.p.rapidapi.com",
 };
 
-// 🔍 get channel by username → channelId
 async function searchChannel(username: string): Promise<string> {
   const res = await fetch(
     `${BASE_URL}/search/?q=${encodeURIComponent(username)}&type=channel`,
@@ -44,7 +43,6 @@ async function getChannelDetails(channelId: string) {
   return res.json();
 }
 
-// 🎬 latest videos
 async function getChannelVideos(channelId: string) {
   const res = await fetch(
     `${BASE_URL}/channel/videos/?id=${channelId}&filter=videos_latest`,
@@ -56,7 +54,6 @@ async function getChannelVideos(channelId: string) {
   return res.json();
 }
 
-// ❤️ get video likes (IMPORTANT)
 async function getVideoDetails(videoId: string) {
   const res = await fetch(
     `${BASE_URL}/video/details/?id=${videoId}`,
@@ -68,7 +65,6 @@ async function getVideoDetails(videoId: string) {
   return res.json();
 }
 
-// 🚀 MAIN
 export async function fetchYouTubeProfile(
   username: string,
 ): Promise<SocialProfile> {

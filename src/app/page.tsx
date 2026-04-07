@@ -261,6 +261,8 @@ export default function Home() {
                           )}
                         </div>
 
+                        {/* POST STATS */}
+
                         <div className="flex gap-4 font-semibold text-[16px] text-shadow-sm place-items-center text-center">
                           <div className="flex place-items-center gap-2">
                             <p className="text-red-500">
@@ -296,6 +298,7 @@ export default function Home() {
                         <p className="text-sm text-zinc-900 line-clamp-4">
                           {post.caption || "No caption"}
                         </p>
+                        
                       </div>
                     </div>
                   ))}
